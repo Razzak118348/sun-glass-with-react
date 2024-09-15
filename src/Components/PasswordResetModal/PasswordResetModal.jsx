@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+
+import { useState } from "react";
 import useAuth from "../../hooks/useAuth";
 
 const PasswordResetModal = () => {
     const {resetPass}  =useAuth()
     const [email,setEmail] = useState('')
-    const handleSubmit = () => { 
+    const handleSubmit = () => {
         resetPass(email)
-            .then(() => {
-            console.log(res);
+            .then((result) => {
+            console.log(result.user);
         })
     }
   return (

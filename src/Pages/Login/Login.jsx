@@ -17,7 +17,7 @@ const Login = () => {
   const location = useLocation();
   const from = location?.state || "/";
 
-  // handle register
+  // handle register with react hock form website
   const onSubmit = (data) => {
     const { email, password } = data;
 
@@ -46,8 +46,10 @@ const Login = () => {
                 type="text"
                 placeholder="email"
                 className="input input-bordered"
+                // eta holo react hock form theke
                 {...register("email", { required: true })}
               />
+              {/* show error message  */}
               {errors.email && (
                 <span className="text-red-500">This field is required</span>
               )}
@@ -76,9 +78,10 @@ const Login = () => {
                 Create an account
               </Link>
             </label>
-            <SocialLogin />
+
             </div>
           </form>
+          <SocialLogin />
         </div>
       </div>
     </>

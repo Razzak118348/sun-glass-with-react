@@ -4,6 +4,7 @@ import useAuth from "../../hooks/useAuth";
 import SocialLogin from "./SocialLogin";
 
 const Register = () => {
+
   const { createUser, updateUserProfile } = useAuth();
   const {
     register,
@@ -15,7 +16,9 @@ const Register = () => {
   const navigate = useNavigate();
   const from = "/";
 
+  //react hock form
   const onSubmit = (data) => {
+    console.log(data)
       const { email, password, image, fullName } = data;
 
       //create user and update profile
@@ -105,9 +108,10 @@ const Register = () => {
                   Please Login
                 </Link>
               </label>
-              <SocialLogin />
+
             </div>
           </form>
+          <SocialLogin />
         </div>
       </div>
     </>
